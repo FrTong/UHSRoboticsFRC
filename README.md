@@ -7,7 +7,7 @@ Wpilib Guide:https://wpilib.screenstepslive.com/s/currentCS/m/java/
 
 Using Command-base robot as the base class
 
-We will not be using any CAN devices or mecanum drive
+NOT using any CAN devices or mecanum drive
 
 
 PID:
