@@ -7,9 +7,6 @@ Wpilib Guide:https://wpilib.screenstepslive.com/s/currentCS/m/java/
 
 Using Command-base robot as the base class
 
-NOT using any CAN devices or mecanum drive
-
-
 PID:
 
 https://www.csimn.com/CSI_pages/PIDforDummies.html
