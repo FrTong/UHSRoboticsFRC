@@ -1,4 +1,4 @@
-# UHSRobotics2019
+# UHSRobotics
 Official Unionville High School Robotics team's github
 
 Wpilib API:http://first.wpi.edu/FRC/roborio/release/docs/java/
