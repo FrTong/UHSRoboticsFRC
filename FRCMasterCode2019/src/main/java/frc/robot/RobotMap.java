@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -26,5 +25,6 @@ public class RobotMap {
   public static Spark right1 = new Spark(2);
   public static Spark right2 = new Spark(3);
   public static Encoder leftEncoder = new Encoder(0,1,false,EncodingType.k4X);
-  public static AnalogGyro gyro = new AnalogGyro(1);
+  public static Encoder rightEncoder = new Encoder(2,3,false,EncodingType.k4X);
+  public static AnalogGyro gyro = new AnalogGyro(4);
 }

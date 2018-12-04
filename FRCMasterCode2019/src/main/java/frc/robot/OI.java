@@ -7,7 +7,8 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,8 +20,15 @@ public class OI {
   //// joystick.
   // You create one by telling it which joystick it's on and which button
   // number it is.
-  Joystick left = new Joystick(0);
-  Joystick right = new Joystick(1);
+  private static XboxController controller = new XboxController(0);
+
+  public static double getDriveX(){
+    return controller.getX(Hand.kRight);
+  }
+
+  public static double getDriveY(){
+    return controller.getY(Hand.kLeft);
+  }
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
