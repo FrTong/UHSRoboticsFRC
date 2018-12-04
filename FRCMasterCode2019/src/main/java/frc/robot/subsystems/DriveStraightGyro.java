@@ -27,7 +27,6 @@ public class DriveStraightGyro extends PIDSubsystem {
 		getPIDController().setContinuous(false);
 		setInputRange(-360,360);  //angle degree
 		setOutputRange(-pidOutputRange,pidOutputRange);
-    fghrf 4ds f
 		this.drivePow = drivePow;
     RobotMap.gyro.reset();
     setSetpoint(second);
