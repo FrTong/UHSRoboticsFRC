@@ -7,6 +7,12 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -14,13 +20,11 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  // For example to map the left and right motors, you could define the
-  // following variables to use with your drivetrain subsystem.
-  // public static int leftMotor = 1;
-  // public static int rightMotor = 2;
-
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
+  //DRIVE
+  public static Spark left1 = new Spark(0);
+  public static Spark left2 = new Spark(1);
+  public static Spark right1 = new Spark(2);
+  public static Spark right2 = new Spark(3);
+  public static Encoder leftEncoder = new Encoder(0,1,false,EncodingType.k4X);
+  public static AnalogGyro gyro = new AnalogGyro(1);
 }
