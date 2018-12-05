@@ -1,5 +1,5 @@
 # UHSRobotics
-Official Unionville High School Robotics team's github
+Official Unionville High School Robotics FRC team's github
 
 Wpilib API:http://first.wpi.edu/FRC/roborio/release/docs/java/
 
