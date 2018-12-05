@@ -19,7 +19,7 @@ public class DriveStraightPID extends PIDSubsystem {
    * Add your docs here.
    */
   public DriveStraightPID(double pow) {
-    // Intert a subsystem name and PID values here
+    // Insert a subsystem name and PID values here
     super("DriveStraightPID", 1, 0, 0);
     setAbsoluteTolerance(2.0); //Degree of error
     getPIDController().setContinuous(true);
