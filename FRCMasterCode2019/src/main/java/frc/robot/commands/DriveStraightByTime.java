@@ -8,32 +8,49 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
+import frc.robot.subsystems.DriveStraightPID;
 
 public class DriveStraightByTime extends Command {
-  public DriveStraightByTime() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  int time;
+  int count;
+  public DriveStraightByTime(double pow,int sec) {
+    requires(Robot.driveSubsystem);
+    time = sec;
+    count = 0;
+    Robot.driveStraightPID = new DriveStraightPID(pow);
+    Robot.driveStraightPID.disable();
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    RobotMap.gyro.reset();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    count++;
+    if(count == 5){ //100 ms to reset
+      Robot.driveStraightPID.setSetpoint(0); //drive straight
+      Robot.driveStraightPID.enable();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return count >= time/0.2;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.driveStraightPID.disable();
+    Robot.driveSubsystem.stop();
+    Robot.driveStraightPID = null;
   }
 
   // Called when another command which requires one or more of the same
