@@ -18,7 +18,7 @@ public class DriveDistancePID extends PIDSubsystem {
    */
   public DriveDistancePID() {
     // Intert a subsystem name and PID values here
-    super("SubsystemName", 1, 2, 3);
+    super("DriveDistancePID", 0.2, 0, 0);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
