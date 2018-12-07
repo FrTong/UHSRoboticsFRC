@@ -20,21 +20,20 @@ public class OI {
   //// joystick.
   // You create one by telling it which joystick it's on and which button
   // number it is.
-  private static XboxController controller = new XboxController(0);
+  private XboxController controller;
 
-  public static double getDriveX(){
+  public OI(){
+    controller = new XboxController(0);
+    tieButton();
+  }
+  public double getDriveX(){
     return controller.getX(Hand.kRight);
   }
 
-  public static double getDriveY(){
+  public double getDriveY(){
     return controller.getY(Hand.kLeft);
   }
-  public static boolean getLiftUp(){
-    return controller.getYButton();
-  }
-  public static boolean getLiftDown(){
-    return controller.getAButton();
-  }
+  public void tieButton(){
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -53,4 +52,5 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
+  }
 }
