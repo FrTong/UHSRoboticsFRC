@@ -10,7 +10,6 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.subsystems.pidcontroller.DriveStraightPID;
 
 public class DriveStraightByDist extends Command {
   private int dist;
