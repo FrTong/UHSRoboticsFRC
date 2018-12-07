@@ -7,45 +7,31 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
-public class EmergencyStopButton extends Command {
-  public EmergencyStopButton() {
+/**
+ * Add your docs here.
+ */
+public class StopAllCommand extends InstantCommand {
+  /**
+   * Add your docs here.
+   */
+  public StopAllCommand() {
+    super();
     requires(Robot.driveStraightPID);
     requires(Robot.driveSubsystem);
     requires(Robot.liftSubsystem);
     requires(Robot.armSubsystem);
   }
 
-  // Called just before this Command runs the first time
+  // Called once when the command executes
   @Override
   protected void initialize() {
-  }
-
-  // Called repeatedly when this Command is scheduled to run
-  @Override
-  protected void execute() {
-  }
-
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return true;
-  }
-
-  // Called once after isFinished returns true
-  @Override
-  protected void end() {
     Robot.driveStraightPID.disable();
     Robot.driveSubsystem.stopMotor();
     Robot.armSubsystem.stopMotor();
     Robot.liftSubsystem.stopMotor();
   }
 
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
-  }
 }
