@@ -19,6 +19,7 @@ public class DriveStraightByDist extends Command {
 
   //don't use this
   private DriveStraightByDist(){}
+  
   public DriveStraightByDist(double pow, int dist,int timeout) {
     requires(Robot.driveSubsystem);
     initVar(dist, timeout);
