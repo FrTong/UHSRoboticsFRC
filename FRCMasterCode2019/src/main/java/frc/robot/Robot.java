@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.subsystems.pidcontroller.DriveDistancePID;
 import frc.robot.subsystems.pidcontroller.DriveStraightPID;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
@@ -32,8 +33,10 @@ public class Robot extends TimedRobot {
 
   public static DriveSubsystem driveSubsystem = new DriveSubsystem();
   public static DriveStraightPID driveStraightPID = new DriveStraightPID();
+  public static DriveDistancePID driveDistancePID = new DriveDistancePID();
   public static ArmSubsystem armSubsystem = new ArmSubsystem();
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
+  public static OI oi = new OI();
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.

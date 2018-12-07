@@ -28,15 +28,15 @@ public class DriveStraightPID extends PIDSubsystem {
     getPIDController().setContinuous(true);
     setInputRange(-360, 360);
     setOutputRange(-Constant.PID_DRIVE_OUTPUT, Constant.PID_DRIVE_OUTPUT);
+    setSetpoint(0);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
     // enable() - Enables the PID controller.
   }
 
-  public void setVar(double power, int setpoint){
+  public void setPower(double power){
     this.power = power;
-    setSetpoint(setpoint);
   }
   @Override
   public void initDefaultCommand() {
