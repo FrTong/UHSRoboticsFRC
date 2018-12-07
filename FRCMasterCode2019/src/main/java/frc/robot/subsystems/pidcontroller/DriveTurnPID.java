@@ -8,17 +8,19 @@
 package frc.robot.subsystems.pidcontroller;
 
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
 public class DriveTurnPID extends PIDSubsystem {
   /**
-   * Add your docs here.
+   * Does a pivot turn
    */
-  public DriveTurnPID() {
+  public DriveTurnPID(int angle) {
     // Intert a subsystem name and PID values here
-    super("SubsystemName", 1, 2, 3);
+    super("DriveTurnPID", 0.2, 0, 0);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
@@ -33,15 +35,11 @@ public class DriveTurnPID extends PIDSubsystem {
 
   @Override
   protected double returnPIDInput() {
-    // Return your input value for the PID loop
-    // e.g. a sensor, like a potentiometer:
-    // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return 0.0;
+    return RobotMap.gyro.getAngle();
   }
 
   @Override
   protected void usePIDOutput(double output) {
-    // Use output to drive your system, like a motor
-    // e.g. yourMotor.set(output);
+    Robot.driveSubsystem.drive(output, -output);
   }
 }
