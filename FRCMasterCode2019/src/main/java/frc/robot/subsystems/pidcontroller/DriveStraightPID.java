@@ -20,7 +20,6 @@ public class DriveStraightPID extends PIDSubsystem {
    * Add your docs here.
    */
   private double power;
-  //don't call this
 
   public DriveStraightPID() {
     // Insert a subsystem name and PID values here
