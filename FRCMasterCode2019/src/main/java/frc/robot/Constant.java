@@ -10,7 +10,7 @@ package frc.robot;
  * Centermetre
  * Second
  */
-public class Constant{
+public final class Constant{
 
     public static int ENCODER_FULL_ROTATION = 360;
     public static int GYRO_DEGREE_PER_TICK = 2;

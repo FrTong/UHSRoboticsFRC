@@ -37,11 +37,14 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    double distancePerPulse = Math.PI*Constant.WHEEL_DIAMETER/Constant.ENCODER_FULL_ROTATION;
+    RobotMap.leftEncoder.setDistancePerPulse(distancePerPulse);
+    RobotMap.rightEncoder.setDistancePerPulse(distancePerPulse);
+    RobotMap.liftEncoder.setDistancePerPulse(distancePerPulse);
     //m_chooser.addDefault("Default Auto", new ExampleCommand());
     // chooser.addObject("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
-
   /**
    * This function is called every robot packet, no matter the mode. Use
    * this for items like diagnostics that you want ran during disabled,
