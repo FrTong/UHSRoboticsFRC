@@ -17,7 +17,7 @@ public class DriveStraightByDist extends Command {
   private int count;
   private int timeout;
 
-  //don't use this
+  //don't call this
   private DriveStraightByDist(){}
   
   public DriveStraightByDist(double pow, int dist,int timeout) {
