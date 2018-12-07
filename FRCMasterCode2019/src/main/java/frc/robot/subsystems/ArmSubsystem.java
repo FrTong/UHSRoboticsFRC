@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class DriveSubsystem extends Subsystem {
+public class ArmSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
@@ -23,14 +23,11 @@ public class DriveSubsystem extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void drive(double left, double right){
-    RobotMap.left1.set(left);
-    RobotMap.left2.set(left);
-    RobotMap.right1.set(-right);
-    RobotMap.right2.set(-right);
+  public void powerArm(double pow){
+    RobotMap.armMotor.set(pow);
   }
 
   public void stopMotor(){
-    drive(0,0);
+    powerArm(0);
   }
 }

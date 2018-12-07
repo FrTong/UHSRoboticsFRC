@@ -8,12 +8,13 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
-public class DriveSubsystem extends Subsystem {
+public class LiftSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
@@ -23,14 +24,11 @@ public class DriveSubsystem extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void drive(double left, double right){
-    RobotMap.left1.set(left);
-    RobotMap.left2.set(left);
-    RobotMap.right1.set(-right);
-    RobotMap.right2.set(-right);
+  public void powerLift(double pow){
+    RobotMap.liftMotor.set(pow);
   }
 
   public void stopMotor(){
-    drive(0,0);
+    powerLift(0);
   }
 }
