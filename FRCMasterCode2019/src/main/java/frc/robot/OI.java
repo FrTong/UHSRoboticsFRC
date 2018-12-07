@@ -29,6 +29,12 @@ public class OI {
   public static double getDriveY(){
     return controller.getY(Hand.kLeft);
   }
+  public static boolean getLiftUp(){
+    return controller.getYButton();
+  }
+  public static boolean getLiftDown(){
+    return controller.getAButton();
+  }
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
