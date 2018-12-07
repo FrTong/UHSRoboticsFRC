@@ -8,6 +8,7 @@
 package frc.robot.subsystems.pidcontroller;
 
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import frc.robot.Constant;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
@@ -20,24 +21,21 @@ public class DriveStraightPID extends PIDSubsystem {
    */
   private double power;
   //don't call this
-  private DriveStraightPID(){
-    super("DriveStraightPID", 1, 0, 0);
-  }
-  public DriveStraightPID(double pow,int setpoint) {
+
+  public DriveStraightPID() {
     // Insert a subsystem name and PID values here
     super("DriveStraightPID", 1, 0, 0);
     setAbsoluteTolerance(2.0); //Degree of error
     getPIDController().setContinuous(true);
     setInputRange(-360, 360);
-    setOutputRange(-0.5, 0.5);
-    initVar(pow, setpoint);
+    setOutputRange(-Constant.PID_DRIVE_OUTPUT, Constant.PID_DRIVE_OUTPUT);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
     // enable() - Enables the PID controller.
   }
 
-  public void initVar(double power, int setpoint){
+  public void setVar(double power, int setpoint){
     this.power = power;
     setSetpoint(setpoint);
   }

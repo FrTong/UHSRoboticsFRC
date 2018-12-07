@@ -20,16 +20,16 @@ public class DriveStraightByDist extends Command {
   //don't call this
   private DriveStraightByDist(){}
   
-  public DriveStraightByDist(double pow, int dist,int timeout) {
+  public DriveStraightByDist(double power, int dist,int timeout) {
     requires(Robot.driveSubsystem);
-    initVar(dist, timeout);
-    Robot.driveStraightPID = new DriveStraightPID(pow,dist);
+    setVar(power,dist, timeout);
     Robot.driveStraightPID.disable();
   }
 
-  public void initVar(int dist, int timeout){
+  public void setVar(double power,int dist, int timeout){
     this.dist = dist;
     this.timeout = timeout;
+    Robot.driveStraightPID.setVar(power, dist);
     count = 0;
   }
   // Called just before this Command runs the first time
